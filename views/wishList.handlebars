@@ -1,0 +1,71 @@
+<main>
+  <div class="cell title"> Favourite List </div>
+    <div class="row" id="wishlist">
+
+    </div>
+</main>
+<script>
+  console.log("loaded scripts");
+  //make ajax request to /api/watchedList
+  $(document).ready(function () {
+    console.log("ready");
+    requestList("wishList", {{ userid }}, function (data) {
+      console.log("received", data);
+      data.map(movie => {
+        $("#wishlist").prepend(
+          $("<div>").attr("class", "favourite-list col-xl-3 col-md-4 col-sm-12").append(
+          $("<div>").attr("class", "card").append(
+            
+            $("<div>").attr("class", "item-img text-center").append(
+              $("<a>").attr("href", "/movie/" + movie.apiId).append(
+                $("<img class='img-fluid card-img-top'>").attr("src", "https://image.tmdb.org/t/p/original" + movie["poster_path"])
+              ),
+            ),
+
+            $("<div>").attr("class", "card-body").append(
+              $("<h6>").attr("class", "item-name card-text item-description").append(
+                $("<a>").attr("href", "/movie/" + movie.apiId).append(
+                  $("<span>").text(movie.title)
+              ))),
+
+              $("<div>").append(
+                $("<button>").attr({
+                  "data-id": movie.id,
+                  "class": "btn btn-danger glow w-100 remove-from-wishlist red"
+                }).text("Remove")
+              )
+
+            )
+          )
+        )
+      })
+    })
+  });
+
+  $(document).on('click', '.remove-from-wishlist', function () {
+    var $searchCont = $(this).closest(".favourite-list");
+    var id = $(this).attr('data-id');
+    deleteFromList("wishList", id, false, function (data) {
+      console.log("delete from favourite list return", data)
+      $searchCont.remove();
+      M.toast({ html: "Removed From Favourite List" });
+    })
+  })
+
+  $(document).on('click', '.move-to-watchedlist', function () {
+    var $searchCont = $(this).closest(".favourite-list");
+
+    var id = $(this).attr('data-id');
+    var title = $(this).attr('data-title');
+    var poster = $(this).attr('data-poster');
+
+    addToList("watchedList", { id, title, poster }, function (data) {
+      console.log("add to watched return", data);
+    });
+    deleteFromList("wishList", id, false, function (data) {
+      console.log("delete from wish return", data)
+      $searchCont.remove();
+      M.toast({ html: "Removed A Movie" });
+    })
+  })
+</script>

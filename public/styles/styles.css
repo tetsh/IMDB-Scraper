@@ -1,0 +1,405 @@
+html,
+body {
+  height: 100%;
+}
+.list-group-item {
+  line-height: 2.5;
+}
+
+.poster {
+  width: 350px;
+  text-align: center;
+}
+
+.bars {
+  margin-bottom: 15em;
+}
+
+.shad {
+  box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.sBar {
+  margin-left: 55px !important;
+}
+
+.p1 {
+  margin-top: 1em !important;
+}
+
+.bot {
+  margin-top: 20em !important;
+}
+
+.bot2 {
+  margin-top: 17em !important;
+}
+
+.title {
+  font-family: "Fjalla One", sans-serif;
+  color: black;
+  font-size: 30px;
+}
+
+.user {
+  padding: 0 32px;
+  color: #444;
+}
+nav.top-nav {
+  height: 110px;
+  box-shadow: none;
+}
+
+.fas {
+  font-size: 30px;
+}
+
+.iCon {
+  font-size: 50px !important;
+}
+
+.logo {
+  height: 140px;
+  width: 140px;
+}
+
+.center {
+  text-align: center !important;
+  padding: 10px;
+}
+
+a.sidenav-trigger.top-nav {
+  position: absolute;
+  text-align: center;
+  height: 45px;
+  width: 45px;
+  top: 3px;
+  left: -20px;
+  float: none;
+  margin-left: 1.5rem;
+  color: white;
+  font-size: 30px;
+  z-index: 2;
+}
+
+.sidenav {
+  width: 250px !important;
+}
+
+nav.top-nav h1.header {
+  margin: 0;
+  padding-top: 22px;
+}
+
+.header {
+  color: white;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 4.2rem;
+  line-height: 110%;
+  font-family: 'Fjalla One', sans-serif !important;
+  font-weight: bold !important;
+  font-size: 40px !important;
+  padding-top: 5px;
+}
+
+.input-fiels:active {
+  color: #ffb74d !important;
+}
+.sidenav {
+  background: white !important;
+}
+
+.sidelinks {
+  color: #444 !important;
+  text-decoration: none;
+}
+
+.waves-effect:hover {
+  background: #212121 !important;
+  color: white !important;
+}
+
+.waves-effect:active {
+  background: #212121 !important;
+  color: white !important;
+}
+.sidelinks:hover {
+  text-decoration: none;
+  color: white;
+}
+.sidelinks:hover i {
+  color: white;
+}
+
+header,
+main,
+footer {
+  margin-left: 250px;
+}
+main {
+  padding: 30px;
+  /* Make footer got to bottom*/
+  min-height: calc(100vh - 64px - 94px);
+}
+
+@media only screen and (max-width: 992px) {
+  header,
+  main,
+  footer {
+    margin-left: 0;
+  }
+  nav .nav-wrapper {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .moviePoster {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 601px) {
+  .center_image {
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .vcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .trailerDiv {
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .sBar {
+    margin-left: 0px !important;
+  }
+}
+
+body {
+  background: #fff;
+  font-family: "Fjalla One", sans-serif;
+  /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-wrapper {
+  width: 100%;
+}
+.swiper-slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 450px !important;
+}
+
+/* Slide captions */
+.slide-captions {
+	position: absolute;
+	top: 80%;
+	left: 7%;
+	color: #FFF;
+	transform: translateY(-50%);
+}
+.slide-captions .current-title {
+	font-size: 48px;
+}
+.slide-captions .current-subtitle {
+	font-size: 28px;
+  margin-top: -1.2rem;
+}
+
+.movieTitle {
+  color: #444;
+  font-weight: bold;
+  font-size: 40px;
+  padding: 10px;
+}
+
+.moviePoster {
+  padding: 10px;
+  width: 350px;
+  text-align: center;
+}
+
+footer {
+  font-family: "IBM Plex Sans", Helvetica, Arial, serif;
+  font-size: 10pt;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  text-align: center;
+  color: white;
+  max-height: 300px;
+  background: #1E1E1E;
+  border-top: 4px solid grey;
+}
+
+/* for footer only */
+#movieCard {
+  height: 500px;
+  width: 300px;
+}
+
+.getGrey {
+  background: #ffa733;
+}
+
+.searchTitle {
+  font-family: "Fjalla One", sans-serif;
+  text-shadow: 2px 2px #ffa733;
+  color: #444;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.searchTitle:hover {
+  opacity: 25%;
+  text-decoration: none !important;
+  font-family: "Fjalla One", sans-serif;
+  text-shadow: 2px 2px #ffa733;
+}
+
+.search-info a {
+  font-family: "Fjalla One", sans-serif;
+  text-shadow: 2px 2px #ffa733;
+  color: #444 !important;
+}
+
+
+.btn-small {
+  background: lightgrey !important;
+  text-decoration: none !important;
+}
+
+.btns {
+  margin: 10px;
+}
+
+.dataTitle {
+  /* font-size: 60px; */
+  text-shadow: 1px 1px 1px #000;
+}
+
+.date {
+  font-size: 20px;
+  text-shadow: 0px;
+}
+
+.poster_image {
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.poster_vcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.summary {
+  font-size: 20px;
+  font-family: "IBM Plex Sans", Helvetica, Arial, serif;
+}
+
+.center_image {
+  float: right;
+}
+
+.vcenter {
+  padding: 10px;
+}
+
+.rcorners1 {
+  border-radius: 25px;
+}
+
+#recTitle,
+#sumTitle {
+  font-family: "Fjalla One", sans-serif !important;
+  text-shadow: 2px 2px #ffa733 !important;
+  color: #444 !important;
+  font-weight: bold !important;
+  font-size: 40px !important;
+  text-align: center !important;
+}
+
+
+/* RESPONSIVE */
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    margin-left: 0;
+  }
+  nav .nav-wrapper {
+    text-align: center;
+  }
+}
+      
+@media only screen and (min-width: 601px) {
+  .row .col.offset-m1 {
+    margin-right: 8.3333333333333%;
+  }
+}
+
+@media only screen and (min-width:992px) {
+  .sBar {
+    margin-left: 0px !important;
+  }
+}
+/* cleaned 5/18 -cm */
+
+
+/* MOVIE BACKDROP */
+.backdrop_path {
+  background-image: radial-gradient(circle at 20% 50%, rgba(22.35%, 23.92%, 24.31%, 0.98) 0%, rgba(1.96%, 5.49%, 9.02%, 0.88) 100%);
+}
+.makeWhite {
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", Helvetica, Arial, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #727E8C;
+  text-align: left;
+  background-color: #F2F4F4;
+}
+
+h6, .h6 {
+  font-size: 1rem;
+}
+
+.item-description {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 0.2rem;
+  font-size: 0.875rem;
+}
+
+
+.modal {
+  min-height: 33%;
+  width: 40%;
+  border-radius: 20px;
+  top: 0% !important
+}
+
+.logo-center {
+  text-align: center !important;
+  margin: auto;
+}

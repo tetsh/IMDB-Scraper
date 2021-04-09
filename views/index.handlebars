@@ -1,0 +1,158 @@
+<main>
+  {{!-- Trending --}}
+  <div class="gridx">
+    <h5 class="cell title" id="trending"> TRENDING </h5>
+
+    {{#if trending.hasResults}}
+    
+    <div class="swiper-fade-effect swiper-container">
+        <div class="swiper-wrapper">
+        
+        {{#each trending.results}}
+            <div class="swiper-slide" data-title="{{title}}" data-subtitle="Rating : {{vote_average}}"> 
+              <a href="/movie/{{id}}">                              
+                <img class="img-fluid" src="https://image.tmdb.org/t/p/original{{backdrop_path}}" alt="banner">
+              </a>
+            </div>
+            <div class="slide-captions"></div>
+
+        {{/each}}
+        
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+
+      </div>
+    </div>
+
+
+
+
+
+
+    {{else}}
+    Error Loading Trending
+    {{/if}}
+    <br>
+
+{{!--Top Rated --}}
+<div class="gridx">
+    <div class="cell title" id="topRated">
+      TOP RATED
+    </div>
+    
+    {{#if topRated.hasResults}}
+
+      <div class="row">
+            {{#each topRated.results}}
+
+                <div class="col-xl-3 col-md-4 col-sm-12">
+                  <div class="card">
+                      <div class="item-img text-center">
+                          <a href="/movie/{{id}}">
+                              <img class="img-fluid card-img-top" src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="img-placeholder"></a>
+                      </div>
+                      <div class="card-body">
+                          <h6 class="item-name card-text item-description">
+                              <a href="/movie/{{id}}">{{title}}</a>
+                          </h6>
+                          <p class="card-text item-description">
+                              {{overview}}
+                          </p>
+                      </div>
+                  </div>
+                </div>
+
+            {{/each}}
+        </div> 
+
+
+
+    {{else}}
+    Error Loading The Top Rated
+    {{/if}}
+    <br>
+
+{{!--Now Playing --}}
+<div class="gridx">
+    <div class="cell title" id="nowPlaying">
+     NOW PLAYING
+    </div>
+    
+    {{#if nowPlaying.hasResults}}
+
+      <div class="row">
+            {{#each nowPlaying.results}}
+
+                <div class="col-xl-3 col-md-4 col-sm-12">
+                  <div class="card">
+                      <div class="item-img text-center">
+                          <a href="/movie/{{id}}">
+                              <img class="img-fluid card-img-top" src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="img-placeholder"></a>
+                      </div>
+                      <div class="card-body">
+                          <h6 class="item-name card-text item-description">
+                              <a class="text-body" href="/movie/{{id}}">{{title}}</a>
+                          </h6>
+                          <p class="card-text item-description">
+                              {{overview}}
+                          </p>
+                      </div>
+                  </div>
+                </div>
+
+            {{/each}}
+        </div> 
+
+    {{else}}
+    Error Loading Now Playing
+    {{/if}}
+    <br>
+
+{{!-- Up Coming --}}
+<div class="gridx">
+    <div class="cell title" id="upComing">
+      UPCOMING
+    </div>
+    {{#if upcoming.hasResults}}
+
+      <div class="row">
+            {{#each upcoming.results}}
+
+                <div class="col-xl-3 col-md-4 col-sm-12">
+                  <div class="card">
+                      <div class="item-img text-center">
+                          <a href="/movie/{{id}}">
+                              <img class="img-fluid card-img-top" src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="img-placeholder"></a>
+                      </div>
+                      <div class="card-body">
+                          <h6 class="item-name card-text item-description">
+                              <a class="text-body" href="/movie/{{id}}">{{title}}</a>
+                          </h6>
+                          <p class="card-text item-description">
+                              {{overview}}
+                          </p>
+                      </div>
+                  </div>
+                </div>
+
+            {{/each}}
+        </div> 
+
+
+    {{else}}
+    Error loading trending
+    {{/if}}
+
+</main>
+
+<script>
+$(document).ready(function() {
+  // Slide captions on load
+  var swiper = new Swiper(".swiper-fade-effect");
+  var title = $(swiper.slides[swiper.activeIndex]).attr("data-title");
+    var subtitle = $(swiper.slides[swiper.activeIndex]).attr("data-subtitle");
+    $(".slide-captions").html(function() {
+    return "<h2 class='current-title'>" + title + "</h2>" + "<h3 class='current-subtitle'>" + subtitle + "</h3>";
+  });
+ });
+</script>
